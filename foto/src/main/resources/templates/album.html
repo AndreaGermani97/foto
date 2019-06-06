@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.tyhmeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="ISO-8859-1">
+<title>Album</title>
+</head>
+<body>
+	<h1>Elenco album</h1>
+	<ul>
+		<li th:each="album:${fotografo.album}">
+			<p>
+				Nome: <a th:href="@{'/album' + '/' + ${album.id}} "
+					     th:text="${album.nome}">Paesaggi</a>
+			</p>
+			<p>
+				<span th:text="${album.descrizione}">bla bla bla</span>
+			</p>
+		</li>
+	</ul>
+
+</body>
+</html>

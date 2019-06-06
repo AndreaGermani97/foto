@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.tyhmeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="ISO-8859-1">
+<title>Fotografi</title>
+</head>
+<body>
+	<h1>Elenco fotografi</h1>
+	<ul>
+		<li th:each="fotografo:${fotografi}">
+			<p>Nome: <span th:text="${fotografo.nome}">Donald</span></p>
+			<p>Cognome: <span th:text="${fotografo.cognome}">Trump</span></p>
+			<p>
+				<a th:href="@{'/fotografo' + '/' + ${fotografo.id}} ">Vedi Album</a>
+			</p>
+		</li>
+	</ul>
+
+</body>
+</html>
