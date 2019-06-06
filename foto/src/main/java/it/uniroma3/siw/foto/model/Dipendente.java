@@ -2,12 +2,12 @@ package it.uniroma3.siw.foto.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Dipendente {	
 	
-	
-	@Column(nullable = false)
+	@Id
 	private String email;
 
 	@Column(nullable = false)

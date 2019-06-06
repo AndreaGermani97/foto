@@ -7,8 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -23,8 +22,7 @@ public class Richiesta {
 	@OneToOne
 	private Cliente cliente;
 
-	@OneToMany
-	@JoinColumn(name = "richiesta_id")
+	@ManyToMany
 	private List<Fotografia> fotografie;
 
 	private int numeroDiFoto;
