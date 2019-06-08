@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.tyhmeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Richiesta</title>
 </head>
 <body>
-
+	<h2>Dati richiesta:</h2>
+	<p>
+		Data: <span th:text="${ richiesta.data }"> 01/01/2000</span>
+	</p>
+	<p>
+		Cliente: <span
+			th:text="${ richiesta.cliente.nome } ${richiesta.cliente.cognome }">Paolo Rossi</span>
+	</p>
+	<p>
+		Email: <span th:text="${ richiesta.cliente.email }">abc@email.it</span>
+	</p>
+	<p>
+		Indirizzo di consegna :
+		<span th:text="${ richiesta.cliente.indirizzo }">via Cristoforo Colombo, 1</span>
+	</p>
+	<p>Foto richieste:</p>
+	<ul>
+		<li th:each="fotografia:${richiesta.fotografie}">
+			<p>
+				<span th:text="${fotografia.nome}">fotoNome</span>
+			</p>
+			<p>
+				<span th:text="${fotografia.descrizione}">fotoDescrizione</span>
+			</p>
+		</li>
+	</ul>
 </body>
 </html>
