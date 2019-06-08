@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.siw.foto.model.Richiesta;
 import it.uniroma3.siw.foto.repository.RichiestaRepository;
@@ -14,8 +15,9 @@ public class RichiestaService {
 	@Autowired
 	private RichiestaRepository richiestaRepository;
 
-	public void inserisci(@Valid Richiesta richiesta) {
-		// TODO Auto-generated method stub
+	@Transactional
+	public Richiesta inserisci(@Valid Richiesta richiesta) {
+		return this.richiestaRepository.save(richiesta);
 		
 	}
 

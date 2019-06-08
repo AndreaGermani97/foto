@@ -3,6 +3,7 @@ package it.uniroma3.siw.foto.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,6 +16,7 @@ import it.uniroma3.siw.foto.service.RichiestaService;
 import it.uniroma3.siw.foto.service.RichiestaValidator;
 
 @Controller
+@Scope("session")
 public class RichiestaController {
 
 	@Autowired
@@ -36,6 +38,13 @@ public class RichiestaController {
 			return "confermaRichiesta.html";
 		}
 
+	}
+	
+	@RequestMapping(value="/confermaRichiesta", method=RequestMethod.GET)
+	public String getRichiesta(@Valid @ModelAttribute("richiesta") Richiesta richiesta, Model model) {
+		richiestaService.inserisci(richiesta);
+		return "richiestaInoltrata.html";
+		
 	}
 
 }
