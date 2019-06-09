@@ -13,5 +13,17 @@
 		<span th:text="${ fotografia.descrizione }">bla bla bla</span>
 	</p>
 	<img>
+	<th:if test="${ dipendenteCorrente==null }">
+	<th:form action="fotografia?fotoId=${fotografia.id}" method="post">
+	<th:choose>
+		<th:when test="${ carrello.fotografie[fotografia.id] !=null}">
+			<input type="submit" value="Rimuovi foto dal carrello"/>
+		</th:when>
+		<th:otherwise>
+			<input type="submit" value="Aggiungi foto al tuo carrello"/>
+		</th:otherwise>
+	</th:choose>
+	</th:form>
+    </th:if>
 </body>
 </html>
