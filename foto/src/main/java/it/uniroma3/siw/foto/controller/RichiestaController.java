@@ -13,17 +13,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.uniroma3.siw.foto.model.Richiesta;
 import it.uniroma3.siw.foto.service.RichiestaService;
-import it.uniroma3.siw.foto.service.RichiestaValidator;
 
 @Controller
 @Scope("session")
 public class RichiestaController {
 
 	@Autowired
-	RichiestaService richiestaService;
+	private RichiestaService richiestaService;
 	
 	@Autowired
-	RichiestaValidator richiestaValidator;
+	private RichiestaValidator richiestaValidator;
 
 	@RequestMapping(value = "/richiesta", method = RequestMethod.POST)
 	public String newRichiesta(@Valid @ModelAttribute("richiesta") Richiesta richiesta, Model model,
@@ -42,7 +41,7 @@ public class RichiestaController {
 	
 	@RequestMapping(value="/confermaRichiesta", method=RequestMethod.GET)
 	public String getRichiesta(@Valid @ModelAttribute("richiesta") Richiesta richiesta, Model model) {
-		richiestaService.inserisci(richiesta);
+		this.richiestaService.inserisci(richiesta);
 		return "richiestaInoltrata.html";
 		
 	}
