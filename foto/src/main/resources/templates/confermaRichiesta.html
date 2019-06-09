@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.tyhmeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Conferma richiesta</title>
 </head>
 <body>
+	Riepilogo Richiesta:
+	<p>Nome: <span th:txt="${ richiestaForm.nome }"> Paolo </span></p>
+	<p>Cognome : <span th:txt="${ richiestaForm.cognome }"> Rossi </span></p>
+	<p>Email: <span th:txt="${ richiestaForm.email }"> abc@email.it </span></p>
+	<p>Indirizzo di consegna: <span th:txt="${ richiestaForm.indirizzo }"> via Cristoforo Colombo, 1</span></p>
+
+	Foto selezionate:
+	<ul>
+		<li th:each="fotografia:${carrello.fotografie}">
+			<p><span th:txt="${fotografiaEntry.value.nome}">foto1</span></p>
+			<img />
+		</li>
+	</ul>
+
+	<p>Inviare la richiesta per questi dati?</p>
+	<p>
+		<a th:href="@{/confermaRichiesta}"> Invia Richiesta</a>
+	</p>
 
 </body>
 </html>
