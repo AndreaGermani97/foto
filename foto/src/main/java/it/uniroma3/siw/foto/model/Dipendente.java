@@ -15,17 +15,24 @@ public class Dipendente {
 
 	@Column(nullable = false)
 	private String cognome;
-
 	
-	//metodo public di getPassword, sar� necessario?
+	@Column(nullable = false)
+	private String ruolo;
+	
+	//metodo public di getPassword, sara' necessario?
 	@Column(nullable = false)
 	private String password;
 	
-	public Dipendente(String email, String password, String nome, String cognome) {
+	public Dipendente() {
+		
+	}
+	
+	public Dipendente(String email, String password, String nome, String cognome, String ruolo) {
 		this.email = email;
 		this.password = password;
 		this.nome = nome;
 		this.cognome = cognome;
+		this.ruolo = ruolo;
 		
 	}
 	
