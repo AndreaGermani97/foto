@@ -14,7 +14,7 @@
 	</p>
 	<img>
 	<th:if test="${ dipendenteCorrente==null }">
-	<th:form action="fotografia?fotoId=${fotografia.id}" method="post">
+	<form th:action="@{'/fotografia' + '/' + ${fotografia.id}}" method="post">
 	<th:choose>
 		<th:when test="${ carrello.fotografie[fotografia.id] !=null}">
 			<input type="submit" value="Rimuovi foto dal carrello"/>
@@ -23,7 +23,7 @@
 			<input type="submit" value="Aggiungi foto al tuo carrello"/>
 		</th:otherwise>
 	</th:choose>
-	</th:form>
+	</form>
     </th:if>
 </body>
 </html>

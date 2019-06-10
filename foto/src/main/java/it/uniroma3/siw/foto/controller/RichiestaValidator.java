@@ -1,4 +1,4 @@
-package it.uniroma3.siw.foto.service;
+package it.uniroma3.siw.foto.controller;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
