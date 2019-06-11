@@ -20,7 +20,7 @@ public class RichiestaValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nome", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cognome", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "indirizzoConsegna", "required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "indirizzo", "required");
 		
 	}
 
