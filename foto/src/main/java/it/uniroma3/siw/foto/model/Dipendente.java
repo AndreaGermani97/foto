@@ -3,11 +3,13 @@ package it.uniroma3.siw.foto.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
 
 @Entity
 public class Dipendente {	
 	
 	@Id
+	@Email
 	private String email;
 
 	@Column(nullable = false)

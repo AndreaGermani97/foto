@@ -57,7 +57,6 @@ public class DBPopulation implements ApplicationRunner{
 		Fotografia fotoUnoAlbumDuePutin = new Fotografia("foto uno album due putin", "");
 		Fotografia fotoDueAlbumDuePutin = new Fotografia("foto due album due putin", "");
 		
-		
 		Fotografo trump = new Fotografo("Donald", "Trump");
 
 		Album albumUnoFotografoTrump = new Album("album uno trump", "album uno di trump");
@@ -90,7 +89,6 @@ public class DBPopulation implements ApplicationRunner{
 	}
 
 	private void addAll() {
-		// TODO Auto-generated method stub
 		creatoreFotografi();
 		fotografoRepository.saveAll(fotografi);
 		albumRepository.saveAll(album);

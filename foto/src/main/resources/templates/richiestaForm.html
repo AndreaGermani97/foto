@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.tyhmeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="ISO-8859-1">
+<title>Nuova richiesta</title>
+</head>
+<body>
+	<form th:action="@{'/richiesta'}" method="post" th:object="${richiesta}">
+		Nome: <p>
+			<input type="text" th:name="nome" 
+				th:value="${richiesta.cliente.nome}"/> <span class="error" th:value="${nomeErr}">
+					 nome è un attributo obbligatorio </span>
+		</p>
+		Cognome: <p>
+			<input type="text" th:name="cognome" th:value="${ richiesta.cliente.cognome }" />
+			<span class="error" th:value="${cognomeErr}"> cognome è un attributo obbligatorio </span>
+		</p>
+		Email: <p>
+			<input type="text" th:name="email" th:value="${ richiesta.cliente.email }" /> <span
+				class="error" th:value="${emailErr}"> email è un attributo obbligatorio </span>
+		</p>
+		Indirizzo: <p>
+			<input type="text" th:name="indirizzo"
+				th:value="${ richiesta.cliente.indirizzo}" /> <span class="error" th:value="${indirizzoErr}">
+				indirizzo è un attributo obbligatorio </span>
+		</p>
+		<p>
+			<span class="error" th:value="${carrelloErr}">
+				indirizzo è un attributo obbligatorio </span>
+		</p>
+		<input type="submit" value="Invia richiesta" />
+	</form>
+
+</body>
+</html>
