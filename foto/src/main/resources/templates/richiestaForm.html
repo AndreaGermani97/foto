@@ -11,7 +11,7 @@
 		<table>
 			<tr>
 				<td>Nome:</td>
-				<td><input type="text" th:value="*{richiesta.cliente.nome}" /></td>
+				<td><input type="text" th:field="*{richiesta.cliente.nome}" /></td>
 				<td th:if="${#fields.hasErrors('richiesta.cliente.nome')}"
 					th:errors="*{nome}"></td>
 
@@ -19,19 +19,19 @@
 			<tr>
 				<td>Cognome:</td>
 				<td><input type="text"
-					th:value="${ richiesta.cliente.cognome }" /></td>
+					th:field="*{ richiesta.cliente.cognome }" /></td>
 				<td th:if="${#fields.hasErrors('richiesta.cliente.cognome')}"
 					th:errors="*{cognome}"></td>
 
 				<td>Email:</td>
-				<td><input type="text" th:value="${ richiesta.cliente.email }" /></td>
+				<td><input type="text" th:field="*{ richiesta.cliente.email }" /></td>
 				<td th:if="${#fields.hasErrors('richiesta.cliente.email')}"
 					th:errors="*{email}"></td>
 			</tr>
 			<tr>
 				<td>Indirizzo:</td>
 				<td><input type="text"
-					th:value="${ richiesta.cliente.indirizzo}" /></td>
+					th:field="*{ richiesta.cliente.indirizzo}" /></td>
 				<td th:if="${#fields.hasErrors('richiesta.cliente.indirizzo')}"
 					th:errors="*{indirizzo}"></td>
 			</tr>
