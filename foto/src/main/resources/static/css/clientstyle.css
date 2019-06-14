@@ -1,0 +1,18 @@
+@charset "ISO-8859-1";
+
+span.richiestaRef{
+	position:absolute;
+	left:80%;
+	top:0;
+}
+
+span.dipendenteRef{
+	position:absolute;
+	left:72%;
+	top:0;
+}
+
+span.error{
+	color:red;
+
+}

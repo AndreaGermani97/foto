@@ -4,8 +4,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Fotografie</title>
+<link th:href="@{/css/clientstyle.css}" rel="stylesheet" />
 </head>
 <body>
+    <div th:insert="header::header"></div>
 	<h1>Elenco fotografie</h1>
 	<ul>
 		<li th:each="fotografia:${album.fotografie}">

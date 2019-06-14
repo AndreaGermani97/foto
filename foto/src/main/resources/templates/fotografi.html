@@ -3,11 +3,12 @@
 	xmlns="http://www.w3.org/1999/html">
 <head>
 <meta charset="ISO-8859-1">
+<link th:href="@{/css/clientstyle.css}" rel="stylesheet" />
 <title>Fotografi</title>
 </head>
 <body>
+    <div th:insert="header::header"></div>
 	<h1>Elenco fotografi</h1>
-	<a th:href="@{/inviaRichiesta}">Invia richiesta</a>
 	<ul>
 		<li th:each="fotografo:${fotografi}">
 			<p>Nome: <span th:text="${fotografo.nome}">Donald</span></p>
