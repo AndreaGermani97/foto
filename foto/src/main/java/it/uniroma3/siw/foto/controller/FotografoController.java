@@ -27,7 +27,7 @@ public class FotografoController {
 		}
 	}
 	
-	@RequestMapping("/home")
+	@RequestMapping("/")
 	public String GetFotografi(Model model) {
 		model.addAttribute("fotografi", fotografoService.tutti());
 		return "fotografi.html";
