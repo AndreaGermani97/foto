@@ -6,37 +6,38 @@
 <title>Nuova richiesta</title>
 </head>
 <body>
+	<h4>Inserisci i tuoi dati per inviare una richiesta</h4>
 	<form th:action="@{'/richiesta'}" method="post"
 		th:object="${richiesta}">
 		<table>
 			<tr>
 				<td>Nome:</td>
-				<td><input type="text" th:field="*{richiesta.cliente.nome}" /></td>
-				<td th:if="${#fields.hasErrors('richiesta.cliente.nome')}"
-					th:errors="*{nome}"></td>
+				<td><input type="text" th:field="*{cliente.nome}" /></td>
+				<td th:if="${#fields.hasErrors('cliente.nome')}"
+					th:errors="*{cliente.nome}"></td>
 
 			</tr>
 			<tr>
 				<td>Cognome:</td>
-				<td><input type="text"
-					th:field="*{ richiesta.cliente.cognome }" /></td>
-				<td th:if="${#fields.hasErrors('richiesta.cliente.cognome')}"
-					th:errors="*{cognome}"></td>
-
+				<td><input type="text" th:field="*{cliente.cognome}" /></td>
+				<td th:if="${#fields.hasErrors('cliente.cognome')}"
+					th:errors="*{cliente.cognome}"></td>
+			</tr>
+			<tr>
 				<td>Email:</td>
-				<td><input type="text" th:field="*{ richiesta.cliente.email }" /></td>
-				<td th:if="${#fields.hasErrors('richiesta.cliente.email')}"
-					th:errors="*{email}"></td>
+				<td><input type="text" th:field="*{cliente.email}" /></td>
+				<td th:if="${#fields.hasErrors('cliente.email')}"
+					th:errors="*{cliente.email}"></td>
 			</tr>
 			<tr>
 				<td>Indirizzo:</td>
-				<td><input type="text"
-					th:field="*{ richiesta.cliente.indirizzo}" /></td>
-				<td th:if="${#fields.hasErrors('richiesta.cliente.indirizzo')}"
-					th:errors="*{indirizzo}"></td>
+				<td><input type="text" th:field="*{cliente.indirizzo}" /></td>
+				<td th:if="${#fields.hasErrors('cliente.indirizzo')}"
+					th:errors="*{cliente.indirizzo}"></td>
 			</tr>
 			<tr>
-				<td th:if="${#fields.hasErrors('carrello')}" th:errors="*{carrello}"></td>
+				<td th:if="${#fields.hasErrors('fotografie')}"
+					th:errors="*{fotografie}"></td>
 			</tr>
 			<tr>
 				<td><input type="submit" value="Invia richiesta" /></td>

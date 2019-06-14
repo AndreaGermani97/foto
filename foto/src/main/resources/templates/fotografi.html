@@ -7,6 +7,7 @@
 </head>
 <body>
 	<h1>Elenco fotografi</h1>
+	<a th:href="@{/inviaRichiesta}">Invia richiesta</a>
 	<ul>
 		<li th:each="fotografo:${fotografi}">
 			<p>Nome: <span th:text="${fotografo.nome}">Donald</span></p>

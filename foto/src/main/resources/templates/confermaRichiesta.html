@@ -7,15 +7,15 @@
 </head>
 <body>
 	Riepilogo Richiesta:
-	<p>Nome: <span th:txt="${ richiestaForm.nome }"> Paolo </span></p>
-	<p>Cognome : <span th:txt="${ richiestaForm.cognome }"> Rossi </span></p>
-	<p>Email: <span th:txt="${ richiestaForm.email }"> abc@email.it </span></p>
-	<p>Indirizzo di consegna: <span th:txt="${ richiestaForm.indirizzo }"> via Cristoforo Colombo, 1</span></p>
+	<p>Nome: <span th:txt="${richiesta.cliente.nome}"> Paolo </span></p>
+	<p>Cognome : <span th:txt="${richiesta.cliente.cognome}"> Rossi </span></p>
+	<p>Email: <span th:txt="${richiesta.cliente.email}"> abc@email.it </span></p>
+	<p>Indirizzo di consegna: <span th:txt="${richiesta.cliente.indirizzo}"> via Cristoforo Colombo, 1</span></p>
 
 	Foto selezionate:
 	<ul>
-		<li th:each="fotografia:${carrello.fotografie}">
-			<p><span th:txt="${fotografiaEntry.value.nome}">foto1</span></p>
+		<li th:each="fotografia:${richiesta.fotografie}">
+			<p><span th:text="${fotografia.nome}">foto1</span></p>
 			<img />
 		</li>
 	</ul>
