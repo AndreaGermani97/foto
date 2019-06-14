@@ -6,19 +6,36 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import it.uniroma3.siw.foto.service.FotografiaService;
 
 @Controller
+@SessionAttributes("album")
 public class FotografiaController {
-	
+
 	@Autowired
 	private FotografiaService fotografiaService;
-	
-	@RequestMapping(value="/fotografia/{id}",method=RequestMethod.GET)
-	public String getFotografia(@PathVariable("id") Long id,Model model) {
+
+	@Autowired
+	private Carrello carrello;
+
+	@RequestMapping(value = "/fotografia/{id}", method = RequestMethod.GET)
+	public String getFotografia(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("fotografia", fotografiaService.getFotografiaPerId(id));
+		model.addAttribute("carrello", this.carrello);
 		return "fotografia.html";
+	}
+
+	@RequestMapping(value = "/aggiungiFotografia/{id}")
+	public String aggiungiFotografiaAlCarrello(@PathVariable("id") Long id,
+			Model model) {
+		if (this.carrello.contains(id)) {
+			carrello.remove(id);
+		} else {
+			this.carrello.add(this.fotografiaService.getFotografiaPerId(id));
+		}
+		return "fotografie.html";
 	}
 
 }
