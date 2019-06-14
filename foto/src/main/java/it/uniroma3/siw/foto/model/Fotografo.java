@@ -3,6 +3,7 @@ package it.uniroma3.siw.foto.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +25,7 @@ public class Fotografo {
 	@Column(nullable = false)
 	private String cognome;
 
-	@OneToMany
+	@OneToMany(cascade= {CascadeType.PERSIST,CascadeType.REMOVE})
 	@JoinColumn(name = "fotografo_id")
 	List<Album> album;
 
@@ -67,6 +68,10 @@ public class Fotografo {
 
 	public void setAlbum(List<Album> album) {
 		this.album = album;
+	}
+
+	public void addAlbum(Album album) {
+		this.album.add(album);
 	}
 
 }

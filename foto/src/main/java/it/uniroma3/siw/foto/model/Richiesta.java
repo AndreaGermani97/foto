@@ -3,6 +3,7 @@ package it.uniroma3.siw.foto.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +20,7 @@ public class Richiesta {
 	
 	private LocalDate data;
 
-	@OneToOne
+	@OneToOne(cascade= {CascadeType.PERSIST,CascadeType.REMOVE})
 	private Cliente cliente;
 
 	@ManyToMany
