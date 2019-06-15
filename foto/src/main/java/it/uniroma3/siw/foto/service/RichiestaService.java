@@ -24,7 +24,7 @@ public class RichiestaService {
 	}
 	@Transactional
 	public List<Richiesta> trovaTutteRichieste() {
-		return (List<Richiesta>) this.richiestaRepository.findAll();
+		return (List<Richiesta>) this.richiestaRepository.findAllByOrderByIdAsc();
 	}
 
 }

@@ -59,9 +59,7 @@ public class RichiestaController {
 	
 	@RequestMapping(value = "/getRichieste", method = RequestMethod.GET)
 	public String getRichieste(Model model) {
-		List<Richiesta> richiesteOrdinatePerData = this.richiestaService.trovaTutteRichieste();
-		Collections.sort(richiesteOrdinatePerData);
-		model.addAttribute("richieste" , richiesteOrdinatePerData);
+		model.addAttribute("richieste" , this.richiestaService.trovaTutteRichieste());
 		return "richieste.html";
 	}
 	
