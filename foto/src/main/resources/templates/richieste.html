@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.tyhmeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista richieste</title>
+
+</head>
+<body>
+	<div th:insert="header::header"></div>
+	<div>
+		<ul>
+			<li th:each="richiesta:${richieste}"><a
+				th:href="@{'/richiesta'+'/'+${id}}" th:text="{richiesta.id}"></a></li>
+		</ul>
+	</div>
+</body>
+</html>

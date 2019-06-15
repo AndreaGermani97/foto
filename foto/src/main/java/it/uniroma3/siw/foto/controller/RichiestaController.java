@@ -1,6 +1,7 @@
 package it.uniroma3.siw.foto.controller;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -54,6 +55,14 @@ public class RichiestaController {
 		this.carrello.svuota(); //svuoto il carrello dopo l'invio della richiesta
 		return "richiestaInoltrata.html";
 
+	}
+	
+	@RequestMapping(value = "/getRichieste", method = RequestMethod.GET)
+	public String getRichieste(Model model) {
+		List<Richiesta> richiesteOrdinatePerData = this.richiestaService.trovaTutteRichieste();
+		Collections.sort(richiesteOrdinatePerData);
+		model.addAttribute("richieste" , richiesteOrdinatePerData);
+		return "richieste.html";
 	}
 	
 	@RequestMapping("/inviaRichiesta")

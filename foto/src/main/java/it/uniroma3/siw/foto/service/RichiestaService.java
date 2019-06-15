@@ -1,5 +1,7 @@
 package it.uniroma3.siw.foto.service;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,10 @@ public class RichiestaService {
 	public Richiesta inserisci(@Valid Richiesta richiesta) {
 		return this.richiestaRepository.save(richiesta);
 		
+	}
+	@Transactional
+	public List<Richiesta> trovaTutteRichieste() {
+		return (List<Richiesta>) this.richiestaRepository.findAll();
 	}
 
 }
