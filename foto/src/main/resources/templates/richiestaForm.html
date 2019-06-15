@@ -14,31 +14,31 @@
 			<tr>
 				<td>Nome:</td>
 				<td><input type="text" th:field="*{cliente.nome}" /></td>
-				<td th:if="${#fields.hasErrors('cliente.nome')}"
-					th:errors="*{cliente.nome}"></td>
+				<td th:if="${#fields.hasErrors('cliente.nome')}"><span
+					class="error" th:errors="*{cliente.nome}"></span></td>
 
 			</tr>
 			<tr>
 				<td>Cognome:</td>
 				<td><input type="text" th:field="*{cliente.cognome}" /></td>
-				<td th:if="${#fields.hasErrors('cliente.cognome')}"
-					th:errors="*{cliente.cognome}"></td>
+				<td th:if="${#fields.hasErrors('cliente.cognome')}"><span
+					class="error" th:errors="*{cliente.cognome}"></span></td>
 			</tr>
 			<tr>
 				<td>Email:</td>
 				<td><input type="text" th:field="*{cliente.email}" /></td>
-				<td th:if="${#fields.hasErrors('cliente.email')}"
-					th:errors="*{cliente.email}"></td>
+				<td th:if="${#fields.hasErrors('cliente.email')}"><span
+					class="error" th:errors="*{cliente.email}"></span></td>
 			</tr>
 			<tr>
 				<td>Indirizzo:</td>
 				<td><input type="text" th:field="*{cliente.indirizzo}" /></td>
-				<td th:if="${#fields.hasErrors('cliente.indirizzo')}"
-					th:errors="*{cliente.indirizzo}"></td>
+				<td th:if="${#fields.hasErrors('cliente.indirizzo')}"><span
+					class="error" th:errors="*{cliente.indirizzo}"></span></td>
 			</tr>
 			<tr>
-				<td th:if="${#fields.hasErrors('fotografie')}"
-					th:errors="*{fotografie}"></td>
+				<td th:if="${#fields.hasErrors('fotografie')}"><span
+					class="error" th:errors="*{fotografie}"></span></td>
 			</tr>
 			<tr>
 				<td><input type="submit" value="Invia richiesta" /></td>
