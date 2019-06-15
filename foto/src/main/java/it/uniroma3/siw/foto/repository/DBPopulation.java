@@ -9,9 +9,11 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import it.uniroma3.siw.foto.model.Album;
+import it.uniroma3.siw.foto.model.Cliente;
 import it.uniroma3.siw.foto.model.Dipendente;
 import it.uniroma3.siw.foto.model.Fotografia;
 import it.uniroma3.siw.foto.model.Fotografo;
+import it.uniroma3.siw.foto.model.Richiesta;
 
 @Component
 public class DBPopulation implements ApplicationRunner{
@@ -27,6 +29,7 @@ public class DBPopulation implements ApplicationRunner{
 	
 	private List<Fotografo> fotografi = new ArrayList<>();
 	private List<Dipendente> dipendenti = new ArrayList<>();
+	private List<Richiesta> richieste = new ArrayList<>();
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -73,17 +76,28 @@ public class DBPopulation implements ApplicationRunner{
 		Dipendente dipendenteEnzo = new Dipendente("enzotongxing.chou@gmail.com", "bananabanana", "Enzo", "Chou", "dipendente");
 		Dipendente dipendenteAndrea = new Dipendente("andreaGermani@gmail.com", "dipendente", "Andrea", "Germani", "dipendente");
 		
+		Cliente obama = new Cliente("Barack", "Obama", "BarackObama@gmail.com", "casa bianca");
+		Cliente clinton	= new Cliente("Bill", "Clinton", "clintonBill@gmail.com", "casa bianca");
+		List<Fotografia> richiestaObama = new ArrayList<>();
+		richiestaObama.add(fotoUnoAlbumUnoPutin);
+		List<Fotografia> richiestaClinton = new ArrayList<>();
+		richiestaClinton.add(fotoDueAlbumUnoPutin);
+		Richiesta richiestaUno = new Richiesta(obama, richiestaObama);
+		Richiesta richiestaDue = new Richiesta(clinton, richiestaClinton);
+		
 		fotografi.add(trump);
 		fotografi.add(putin);
 		dipendenti.add(dipendenteEnzo);
 		dipendenti.add(dipendenteAndrea);
+		richieste.add(richiestaUno);
+		richieste.add(richiestaDue);
 	}
 
 	private void addAll() {
 		creatoreFotografi();
 		fotografoRepository.saveAll(fotografi);
 		dipendenteRepository.saveAll(dipendenti);
-		
+		richiestaRepository.saveAll(richieste);
 	}
 
 	private void deleteAll() {
