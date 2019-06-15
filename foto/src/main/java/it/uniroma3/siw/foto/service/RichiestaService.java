@@ -26,5 +26,8 @@ public class RichiestaService {
 	public List<Richiesta> trovaTutteRichieste() {
 		return (List<Richiesta>) this.richiestaRepository.findAllByOrderByIdAsc();
 	}
+	public Richiesta getRichiestaPerId(Long id) {
+		return this.richiestaRepository.findById(id).get();
+	}
 
 }

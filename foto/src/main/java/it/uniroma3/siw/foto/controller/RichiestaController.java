@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -56,11 +57,22 @@ public class RichiestaController {
 		return "richiestaInoltrata.html";
 
 	}
-	
-	@RequestMapping(value = "/getRichieste", method = RequestMethod.GET)
+	//controllo per mostrare la pagina con la lista delle richieste
+	@RequestMapping(value = "/richieste", method = RequestMethod.GET)
 	public String getRichieste(Model model) {
 		model.addAttribute("richieste" , this.richiestaService.trovaTutteRichieste());
 		return "richieste.html";
+	}
+	//controllo per mostrare la singola richiesta
+	@RequestMapping(value = "/richieste/{id}", method = RequestMethod.GET)
+	public String getRichiesta(@PathVariable("id") Long id, Model model) {
+		if(id!=null) {
+		model.addAttribute("richiesta", this.richiestaService.getRichiestaPerId(id));
+		return "richiesta.html";
+		} else {
+			model.addAttribute("richieste", this.richiestaService.trovaTutteRichieste());
+			return "richieste.html";
+		}
 	}
 	
 	@RequestMapping("/inviaRichiesta")

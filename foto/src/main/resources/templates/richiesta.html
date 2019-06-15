@@ -11,15 +11,18 @@
 		Data: <span th:text="${ richiesta.data }"> 01/01/2000</span>
 	</p>
 	<p>
-		Cliente: <span
-			th:text="${ richiesta.cliente.nome } ${richiesta.cliente.cognome }">Paolo Rossi</span>
+		Nome: <span th:text="${richiesta.cliente.nome }">Paolo</span>
+	</p>
+	<p>
+		Cognome: <span th:text="${richiesta.cliente.cognome}">Rossi</span>
 	</p>
 	<p>
 		Email: <span th:text="${ richiesta.cliente.email }">abc@email.it</span>
 	</p>
 	<p>
-		Indirizzo di consegna :
-		<span th:text="${ richiesta.cliente.indirizzo }">via Cristoforo Colombo, 1</span>
+		Indirizzo di consegna: <span
+			th:text="${ richiesta.cliente.indirizzo }">via Cristoforo
+			Colombo, 1</span>
 	</p>
 	<p>Foto richieste:</p>
 	<ul>
