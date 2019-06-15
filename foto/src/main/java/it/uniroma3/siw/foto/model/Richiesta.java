@@ -12,7 +12,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Richiesta implements Comparable<Richiesta>{
+public class Richiesta{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,26 +36,6 @@ public class Richiesta implements Comparable<Richiesta>{
 		this.cliente = cliente;
 		this.fotografie = fotografie;
 		this.numeroDiFoto = fotografie.size();
-	}
-	
-	@Override
-	public boolean equals(Object o) {
-		Richiesta r = (Richiesta) o;
-		return r.getId()==this.getId();
-	}
-	
-	@Override
-	public int hashCode() {
-		return (int) this.getId()+this.getCliente().hashCode()+this.getData().hashCode();
-	}
-	
-	@Override
-	public int compareTo(Richiesta r) {
-		if(this.getData()==r.getData()) {
-			return this.getCliente().getCognome().compareTo(r.getCliente().getCognome());
-		} else {
-			return this.getData().hashCode()-r.getData().hashCode();
-		}
 	}
 
 	public long getId() {
