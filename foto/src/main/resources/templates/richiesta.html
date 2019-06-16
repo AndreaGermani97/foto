@@ -8,7 +8,7 @@
 <body>
 	<h2>Dati richiesta:</h2>
 	<p>
-		Data: <span th:date="${ richiesta.data }"> 01/01/2000</span>
+		Data: <span th:text="${ richiesta.data }"> 01/01/2000</span>
 	</p>
 	<p>
 		Nome: <span th:text="${richiesta.cliente.nome }">Paolo</span>
@@ -25,8 +25,7 @@
 			Colombo, 1</span>
 	</p>
 	<p>Foto richieste:</p>
-	<ul>
-		<li th:each="fotografia:${richiesta.fotografie}">
+		<div th:each="fotografia:${richiesta.fotografie}">
 			<p>
 				<img th:src="@{${fotografia.picLocation}}" width="300">
 			</p>
@@ -36,7 +35,6 @@
 			<p>
 				<span th:text="${fotografia.descrizione}">fotoDescrizione</span>
 			</p>
-		</li>
-	</ul>
+		</div>
 </body>
 </html>

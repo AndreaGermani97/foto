@@ -7,12 +7,11 @@
 <link th:href="@{/css/clientstyle.css}" rel="stylesheet" />
 </head>
 <body>
-    <div th:insert="header::header"></div>
+	<div th:insert="header::header"></div>
 	<h1>Elenco fotografie</h1>
-	<ul>
-		<li th:each="fotografia:${album.fotografie}">
+		<div th:each="fotografia:${album.fotografie}">
 			<p>
-				<img th:src="@{${fotografia.picLocation}}" width="500">
+				<img th:src="@{${fotografia.picLocation}}" width="500" />
 			</p>
 			<p>
 				Nome: <span th:text="${fotografia.nome}">Mare</span>
@@ -21,9 +20,8 @@
 				<span th:text="${fotografia.descrizione}">bla bla bla</span>
 			</p>
 			<p>
-				<a th:href="@{'/fotografia' + '/' + ${fotografia.id}} ">Vedi Foto</a>
+				<a th:href="@{'/fotografia' + '/' + ${fotografia.id}} ">Vedi
+					Foto</a>
 			</p>
-		</li>
-	</ul>
-
+		</div>
 </body>

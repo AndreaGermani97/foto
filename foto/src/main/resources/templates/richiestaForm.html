@@ -44,12 +44,10 @@
 				<td><input type="submit" value="Invia richiesta" /></td>
 			</tr>
 		</table>
-		<ul>
-			<li th:each="fotografia:${richiesta.fotografie}">
-				<img th:src="@{${fotografia.picLocation}}" width="300">
-			</li>
-		</ul>
-	</form>
-
+      </form>
+      Foto selezionate:
+       <div th:each="fotografia:${richiesta.fotografie}">
+	      <img th:src="@{${fotografia.picLocation}}" width="300">
+	    </div>
 </body>
 </html>

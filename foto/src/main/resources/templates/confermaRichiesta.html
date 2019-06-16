@@ -23,11 +23,9 @@
 	</p>
 
 	Foto selezionate:
-		<ul>
-			<li th:each="fotografia:${richiesta.fotografie}">
+			<div th:each="fotografia:${richiesta.fotografie}">
 				<img th:src="@{${fotografia.picLocation}}" width="300">
-			</li>
-		</ul>
+			</div>
 
 	<p>Inviare la richiesta per questi dati?</p>
 	<p>
