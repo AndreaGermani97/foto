@@ -33,6 +33,13 @@ public class MainController {
 	public String loginDipendente() {
 		return "dipendenteLogin";
 	}
+	
+	@RequestMapping("/logout")
+	public String logout(Model model,HttpSession session) {
+		session.invalidate();
+		model.addAttribute("fotografi", fotografoService.tutti());
+		return "fotografi.html";
+	}
 
 	@RequestMapping("/accedi")
 	public String accedi(Model model,HttpSession session) {

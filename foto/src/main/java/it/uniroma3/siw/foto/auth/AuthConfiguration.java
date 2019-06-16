@@ -35,11 +35,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 	    .and().formLogin()
 	       .loginPage("/login")
 	       .usernameParameter("email")
-	       .successForwardUrl("/accedi")
-
-		.and().logout()
-		    .logoutUrl("/logout")
-		    .logoutSuccessUrl("/");
+	       .successForwardUrl("/accedi");
 	}
 
 	@Autowired
