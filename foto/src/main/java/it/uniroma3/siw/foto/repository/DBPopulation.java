@@ -1,6 +1,7 @@
 package it.uniroma3.siw.foto.repository;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -93,7 +94,9 @@ public class DBPopulation implements ApplicationRunner{
 		List<Fotografia> richiestaClinton = new ArrayList<>();
 		richiestaClinton.add(putinAlbumUnoFotoDue);
 		Richiesta richiestaUno = new Richiesta(obama, richiestaObama);
+		richiestaUno.setData(LocalDate.now());
 		Richiesta richiestaDue = new Richiesta(clinton, richiestaClinton);
+		richiestaDue.setData(LocalDate.now());
 		
 		fotografi.add(trump);
 		fotografi.add(putin);

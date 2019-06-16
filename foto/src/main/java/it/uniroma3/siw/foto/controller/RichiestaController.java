@@ -1,5 +1,6 @@
 package it.uniroma3.siw.foto.controller;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -39,8 +40,6 @@ public class RichiestaController {
 		// controllo se la richiesta è valida:
 		// se è valida lo mando alla conferma per la persistenza nel db
 		// se non è valida lo rimando alla pagina di richiestaInoltrata
-		List<Fotografia> fotografie = new ArrayList<>(this.carrello.getFotografie().values());
-		richiesta.setFotografie(fotografie);
 		this.richiestaValidator.validate(richiesta, bindingResult);
 		if (!bindingResult.hasErrors()) {
 			return "confermaRichiesta.html";
@@ -52,6 +51,7 @@ public class RichiestaController {
 
 	@RequestMapping(value = "/confermaRichiesta", method = RequestMethod.GET)
 	public String getRichiesta(@Valid @ModelAttribute("richiesta") Richiesta richiesta, Model model) {
+		richiesta.setData(LocalDate.now());
 		this.richiestaService.inserisci(richiesta);
 		this.carrello.svuota(); //svuoto il carrello dopo l'invio della richiesta
 		return "richiestaInoltrata.html";
@@ -77,8 +77,10 @@ public class RichiestaController {
 	
 	@RequestMapping("/inviaRichiesta")
 	public String inviaRichiesta(Model model) {
-		model.addAttribute("richiesta", new Richiesta());
-		model.addAttribute("fotografie", this.carrello.getFotografie().values());
+		Richiesta richiesta = new Richiesta();
+		List<Fotografia> fotografie = new ArrayList<>(this.carrello.getFotografie().values());
+		richiesta.setFotografie(fotografie);
+		model.addAttribute("richiesta", richiesta);
 		return "richiestaForm.html";
 	}
 

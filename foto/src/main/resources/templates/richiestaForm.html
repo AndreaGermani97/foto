@@ -44,11 +44,11 @@
 				<td><input type="submit" value="Invia richiesta" /></td>
 			</tr>
 		</table>
-		<table>
-			<tr>
-				<td th:each="fotografia:${fotografie}"><img th:src="@{${fotografia.picLocation}}" width="300"></td>
-			</tr>
-		</table>
+		<ul>
+			<li th:each="fotografia:${richiesta.fotografie}">
+				<img th:src="@{${fotografia.picLocation}}" width="300">
+			</li>
+		</ul>
 	</form>
 
 </body>

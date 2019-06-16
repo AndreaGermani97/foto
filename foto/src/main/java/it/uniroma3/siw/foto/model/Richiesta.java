@@ -32,7 +32,6 @@ public class Richiesta{
 	}
 
 	public Richiesta(Cliente cliente, List<Fotografia> fotografie) {
-		this.data=LocalDate.now();
 		this.cliente = cliente;
 		this.fotografie = fotografie;
 		this.numeroDiFoto = fotografie.size();
