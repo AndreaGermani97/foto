@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import it.uniroma3.siw.foto.model.Album;
@@ -73,8 +74,8 @@ public class DBPopulation implements ApplicationRunner{
 		albumDueFotografoTrump.addFotografia(fotoDueAlbumDueTrump);
 		
 		
-		Dipendente dipendenteEnzo = new Dipendente("enzotongxing.chou@gmail.com", "bananabanana", "Enzo", "Chou", "dipendente");
-		Dipendente dipendenteAndrea = new Dipendente("andreaGermani@gmail.com", "dipendente", "Andrea", "Germani", "dipendente");
+		Dipendente dipendenteEnzo = new Dipendente("enzotongxing.chou@gmail.com", new BCryptPasswordEncoder().encode("bananabanana"), "Enzo", "Chou", "DIPENDENTE");
+		Dipendente dipendenteAndrea = new Dipendente("andreaGermani@gmail.com", new BCryptPasswordEncoder().encode("melamela"), "Andrea", "Germani", "DIPENDENTE");
 		
 		Cliente obama = new Cliente("Barack", "Obama", "BarackObama@gmail.com", "casa bianca");
 		Cliente clinton	= new Cliente("Bill", "Clinton", "clintonBill@gmail.com", "casa bianca");
