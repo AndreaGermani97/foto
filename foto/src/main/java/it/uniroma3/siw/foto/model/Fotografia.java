@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -20,6 +21,8 @@ public class Fotografia {
 	private String nome;
 
 	private String descrizione;
+
+	private String picLocation;
 
 	public Fotografia() {
 	}
@@ -55,6 +58,14 @@ public class Fotografia {
 
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
+	}
+	
+	public String getPicLocation() {
+		return this.picLocation;
+	}
+	
+	public void setPicLocation(String pic) {
+		this.picLocation = pic;
 	}
 
 }

@@ -12,6 +12,9 @@
 	<ul>
 		<li th:each="fotografia:${album.fotografie}">
 			<p>
+				<img th:src="@{${fotografia.picLocation}}" width="500">
+			</p>
+			<p>
 				Nome: <span th:text="${fotografia.nome}">Mare</span>
 			</p>
 			<p>
