@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login dipendente</title>
+</head>
+<body>
+	<h4>Inserisci le credenziali per accedere</h4>
+	<form th:action="@{${loginProcessingUrl}}" method="post">
+		<table>
+			<tr>
+				<td>Email:</td>
+				<td><input type="text" name="email"></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" name="password"></td>
+			</tr>
+
+			<tr th:if="${param.error!=null}">
+				<td>Credenziali non valide</td>
+			</tr>
+
+			<tr>
+				<td><button type="submit">Accedi</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
