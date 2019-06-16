@@ -78,6 +78,7 @@ public class RichiestaController {
 	@RequestMapping("/inviaRichiesta")
 	public String inviaRichiesta(Model model) {
 		model.addAttribute("richiesta", new Richiesta());
+		model.addAttribute("fotografie", this.carrello.getFotografie().values());
 		return "richiestaForm.html";
 	}
 

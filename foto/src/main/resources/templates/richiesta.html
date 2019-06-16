@@ -28,6 +28,9 @@
 	<ul>
 		<li th:each="fotografia:${richiesta.fotografie}">
 			<p>
+				<img th:src="@{${fotografia.picLocation}}" width="300">
+			</p>
+			<p>
 				<span th:text="${fotografia.nome}">fotoNome</span>
 			</p>
 			<p>
