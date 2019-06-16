@@ -16,7 +16,7 @@
 		<span th:text="${ fotografia.descrizione }">bla bla bla</span>
 	</p>
 	<img>
-	<div th:if="${ dipendenteCorrente==null }">
+	<div th:if="${ session.dipendenteCorrente==null }">
 	<a th:href="@{'/aggiungiFotografia/' + ${fotografia.id}}">
 		<Button th:if="${carrello.contains(fotografia.id)}" type="submit" >Rimuovi foto dal carrello</Button>
 		<Button th:unless="${carrello.contains(fotografia.id)}" type="submit">Aggiungi foto al tuo carrello</Button>
