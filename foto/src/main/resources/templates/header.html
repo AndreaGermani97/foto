@@ -14,6 +14,11 @@
 </div>
 
 <div th:if="${session.dipendenteCorrente!=null}">
+<p>Dipendente: 
+<span th:text="${session.dipendenteCorrente.nome}">Andrea</span>
+<span th:text="${session.dipendenteCorrente.cognome}">Germani</span>
+</p>
+
 <span class="richiestaRef"><a href="/richieste">Trova Richieste</a></span>
 <span class="dipendenteRef"><a href="/logout">Esci</a></span>
 </div>
