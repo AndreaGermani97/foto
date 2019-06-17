@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -25,8 +24,7 @@ public class Fotografo {
 	@Column(nullable = false)
 	private String cognome;
 
-	@OneToMany(cascade= {CascadeType.PERSIST,CascadeType.REMOVE})
-	@JoinColumn(name = "fotografo_id")
+	@OneToMany(mappedBy="fotografo",cascade= {CascadeType.PERSIST,CascadeType.REMOVE})
 	List<Album> album;
 
 	public Fotografo() {

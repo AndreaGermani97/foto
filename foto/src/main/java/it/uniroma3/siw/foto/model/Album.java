@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -27,21 +28,21 @@ public class Album {
 
 	private String descrizione;
 
-	@OneToMany(cascade= {CascadeType.PERSIST,CascadeType.REMOVE})
+	@ManyToOne
+	private Fotografo fotografo;
+
+	@OneToMany(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
 	@JoinColumn(name = "album_id")
 	List<Fotografia> fotografie;
 
 	public Album() {
 	}
 
-	public Album(String nome) {
-		this(nome, null);
-	}
-
-	public Album(String nome, String descrizione) {
+	public Album(String nome, String descrizione, Fotografo fotografo) {
 		this.nome = nome;
 		this.descrizione = descrizione;
 		this.fotografie = new ArrayList<>();
+		this.fotografo = fotografo;
 	}
 
 	public long getId() {
@@ -68,6 +69,14 @@ public class Album {
 		this.descrizione = descrizione;
 	}
 
+	public Fotografo getFotografo() {
+		return fotografo;
+	}
+
+	public void setFotografo(Fotografo fotografo) {
+		this.fotografo = fotografo;
+	}
+
 	public List<Fotografia> getFotografie() {
 		return fotografie;
 	}
@@ -76,7 +85,7 @@ public class Album {
 		this.fotografie = fotografie;
 	}
 
-	public void addFotografia(Fotografia fotografia) {		
+	public void addFotografia(Fotografia fotografia) {
 		this.fotografie.add(fotografia);
 	}
 

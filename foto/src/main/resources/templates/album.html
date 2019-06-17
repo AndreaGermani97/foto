@@ -9,6 +9,11 @@
 <body>
     <div th:insert="header::header"></div>
 	<h1>Elenco album</h1>
+	
+	<div th:if="${session.dipendenteCorrente!=null}">
+	   <a href="/aggiungiAlbum">Inserisci album</a>
+	</div>
+	
 	<ul>
 		<li th:each="album:${fotografo.album}">
 			<p>

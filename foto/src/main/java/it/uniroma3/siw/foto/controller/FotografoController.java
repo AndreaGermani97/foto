@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
 import it.uniroma3.siw.foto.model.Fotografo;
 import it.uniroma3.siw.foto.service.FotografoService;
 
 @Controller
+@SessionAttributes("fotografo")
 public class FotografoController {
 	
 	@Autowired

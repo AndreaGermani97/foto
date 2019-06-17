@@ -43,9 +43,9 @@ public class DBPopulation implements ApplicationRunner{
 	private void creatoreFotografi() throws IOException {
 		Fotografo putin = new Fotografo("Vladimir", "Putin");
 		
-		Album albumUnoFotografoPutin = new Album("album uno Putin", "album uno di putin");
+		Album albumUnoFotografoPutin = new Album("album uno Putin", "album uno di putin",putin);
 		putin.addAlbum(albumUnoFotografoPutin);
-		Album albumDueFotografoPutin = new Album("album due Putin","album due di putin");
+		Album albumDueFotografoPutin = new Album("album due Putin","album due di putin",putin);
 		putin.addAlbum(albumDueFotografoPutin);
 		
 		Fotografia putinAlbumUnoFotoUno = new Fotografia("foto uno album uno putin", "");
@@ -64,9 +64,9 @@ public class DBPopulation implements ApplicationRunner{
 		
 		Fotografo trump = new Fotografo("Donald", "Trump");
 
-		Album albumUnoFotografoTrump = new Album("album uno trump", "album uno di trump");
+		Album albumUnoFotografoTrump = new Album("album uno trump", "album uno di trump",trump);
 		trump.addAlbum(albumUnoFotografoTrump);
-		Album albumDueFotografoTrump = new Album("album due trump", "album due di trump");
+		Album albumDueFotografoTrump = new Album("album due trump", "album due di trump",trump);
 		trump.addAlbum(albumDueFotografoTrump);
 
 		Fotografia trumpAlbumUnoFotoUno = new Fotografia("foto uno album uno trump", "");
