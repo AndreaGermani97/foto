@@ -24,10 +24,11 @@ public class Fotografo {
 	@Column(nullable = false)
 	private String cognome;
 
-	@OneToMany(mappedBy="fotografo",cascade= {CascadeType.PERSIST,CascadeType.REMOVE})
+	@OneToMany(mappedBy = "fotografo", cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
 	List<Album> album;
 
 	public Fotografo() {
+		this.album = new ArrayList<>();
 	}
 
 	public Fotografo(String nome, String cognome) {

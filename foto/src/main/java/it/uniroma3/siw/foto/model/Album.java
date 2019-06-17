@@ -36,6 +36,7 @@ public class Album {
 	List<Fotografia> fotografie;
 
 	public Album() {
+		this.fotografie = new ArrayList<>();
 	}
 
 	public Album(String nome, String descrizione, Fotografo fotografo) {
