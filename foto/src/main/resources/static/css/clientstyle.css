@@ -12,6 +12,11 @@ span.dipendenteRef{
 	top:0;
 }
 
+span.aggiuntaRef{
+	position:absolute;
+	left:80%;
+}
+
 span.error{
 	color:red;
 

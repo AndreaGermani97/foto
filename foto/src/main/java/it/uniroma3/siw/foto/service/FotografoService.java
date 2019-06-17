@@ -2,6 +2,8 @@ package it.uniroma3.siw.foto.service;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,5 +25,10 @@ public class FotografoService {
 	@Transactional
 	public List<Fotografo> tutti() {
 		return (List<Fotografo>)fotografoRepository.findAll();
+	}
+
+	public void inserisci(@Valid Fotografo fotografo) {
+		this.fotografoRepository.save(fotografo);
+		
 	}
 }
