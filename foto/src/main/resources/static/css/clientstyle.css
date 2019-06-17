@@ -17,6 +17,12 @@ span.aggiuntaRef{
 	left:80%;
 }
 
+span.fotografiRef{
+	position:absolute;
+	left:88%;
+	top:0;
+}
+
 span.error{
 	color:red;
 

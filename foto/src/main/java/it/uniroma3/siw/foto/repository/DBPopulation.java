@@ -84,7 +84,7 @@ public class DBPopulation implements ApplicationRunner{
 		albumDueFotografoTrump.addFotografia(trumpAlbumDueFotoDue);
 		
 		
-		Dipendente dipendenteEnzo = new Dipendente("enzotongxing.chou@gmail.com", new BCryptPasswordEncoder().encode("bananabanana"), "Enzo", "Chou", "DIPENDENTE");
+		Dipendente dipendenteEnzo = new Dipendente("enzotongxing.chou@gmail.com", new BCryptPasswordEncoder().encode("banana"), "Enzo", "Chou", "DIPENDENTE");
 		Dipendente dipendenteAndrea = new Dipendente("andreaGermani@gmail.com", new BCryptPasswordEncoder().encode("melamela"), "Andrea", "Germani", "DIPENDENTE");
 		
 		Cliente obama = new Cliente("Barack", "Obama", "BarackObama@gmail.com", "casa bianca");
