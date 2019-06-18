@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -22,17 +23,17 @@ public class Fotografia {
 	private String descrizione;
 
 	private String picLocation;
+	
+	@ManyToOne
+	private Album album;
 
 	public Fotografia() {
 	}
 
-	public Fotografia(String nome) {
-		this(nome, null);
-	}
-
-	public Fotografia(String nome, String descrizione) {
+	public Fotografia(String nome, String descrizione, Album album) {
 		this.nome = nome;
 		this.descrizione = descrizione;
+		this.album = album;
 	}
 
 	public long getId() {
@@ -67,4 +68,12 @@ public class Fotografia {
 		this.picLocation = pic;
 	}
 
+	public Album getAlbum() {
+		return album;
+	}
+
+	public void setAlbum(Album album) {
+		this.album = album;
+	}
+	
 }

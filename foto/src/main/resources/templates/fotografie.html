@@ -8,6 +8,10 @@
 </head>
 <body>
 	<div th:insert="header::header"></div>
+	
+	<div th:if="${session.dipendenteCorrente!=null}">
+	   <span class="aggiuntaRef"><a href="/aggiungiFotografia">Inserisci foto</a></span>
+	</div>
 	<h1>Elenco fotografie</h1>
 		<div th:each="fotografia:${album.fotografie}">
 			<p>
