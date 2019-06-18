@@ -21,7 +21,6 @@ public class Dipendente {
 	@Column(nullable = false)
 	private String ruolo;
 	
-	//metodo public di getPassword, sara' necessario?
 	@Column(nullable = false)
 	private String password;
 	
@@ -38,10 +37,6 @@ public class Dipendente {
 		
 	}
 	
-	public boolean checkPassword(String pwd) {
-		return this.password==pwd;
-	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -65,11 +60,11 @@ public class Dipendente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	/*
+	
 	public String getPassword() {
 		return password;
 	}
-	*/
+	
 	public void setPassword(String password) {
 		this.password = password;
 	}

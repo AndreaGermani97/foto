@@ -26,15 +26,12 @@ public class Richiesta{
 	@ManyToMany
 	private List<Fotografia> fotografie;
 
-	private int numeroDiFoto;
-
 	public Richiesta() {
 	}
 
 	public Richiesta(Cliente cliente, List<Fotografia> fotografie) {
 		this.cliente = cliente;
 		this.fotografie = fotografie;
-		this.numeroDiFoto = fotografie.size();
 	}
 
 	public long getId() {
@@ -68,13 +65,5 @@ public class Richiesta{
 	public void setFotografie(List<Fotografia> fotografie) {
 		this.fotografie = fotografie;
 	}
-
-	public int getNumeroDiFoto() {
-		return numeroDiFoto;
-	}
-
-	public void setNumeroDiFoto(int numeroDiFoto) {
-		this.numeroDiFoto = numeroDiFoto;
-	}
-
+	
 }
