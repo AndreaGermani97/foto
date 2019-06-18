@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.tyhmeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
 <head>
 <meta charset="ISO-8859-1">
 <title>Login dipendente</title>
@@ -17,7 +18,7 @@
 				<td><input type="password" name="password"></td>
 			</tr>
 
-			<tr th:if="${param.error!=null}">
+			<tr class="error" th:if="${param.error!=null}">
 				<td>Credenziali non valide</td>
 			</tr>
 

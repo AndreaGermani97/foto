@@ -3,9 +3,11 @@
 	xmlns="http://www.w3.org/1999/html">
 <head>
 <meta charset="ISO-8859-1">
+<link th:href="@{/css/clientstyle.css}" rel="stylesheet" />
 <title>Fotografia</title>
 </head>
 <body>
+	    <div th:insert="header::header"></div>
 	<p>
 		<img th:src="@{${fotografia.picLocation}}" width="800">
 	</p>
