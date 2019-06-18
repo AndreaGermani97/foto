@@ -63,7 +63,7 @@ public class RichiestaController {
 		return "richieste.html";
 	}
 	//controllo per mostrare la singola richiesta
-	@RequestMapping(value = "/richieste/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/richiesta/{id}", method = RequestMethod.GET)
 	public String getRichiesta(@PathVariable("id") Long id, Model model) {
 		if(id!=null) {
 		model.addAttribute("richiesta", this.richiestaService.getRichiestaPerId(id));

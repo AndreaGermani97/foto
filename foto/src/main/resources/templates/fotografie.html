@@ -8,20 +8,17 @@
 </head>
 <body>
 	<div th:insert="header::header"></div>
-	<h1>Elenco fotografie</h1>
-		<div th:each="fotografia:${album.fotografie}">
-			<p>
-				<img th:src="@{${fotografia.picLocation}}" width="500" />
-			</p>
-			<p>
-				Nome: <span th:text="${fotografia.nome}">Mare</span>
-			</p>
-			<p>
-				<span th:text="${fotografia.descrizione}">bla bla bla</span>
-			</p>
-			<p>
-				<a th:href="@{'/fotografia' + '/' + ${fotografia.id}} ">Vedi
-					Foto</a>
-			</p>
-		</div>
+	
+	<h1 th:text="${album.nome}">Paesaggi</h1>
+	
+	<div th:each="fotografia:${album.fotografie}">
+		<p th:text="${fotografia.nome}">Mare</p>
+		
+		<p>
+			<a th:href="@{'/fotografia' + '/' + ${fotografia.id}} "> <img
+				th:src="@{${fotografia.picLocation}}" width="500" />
+			</a>
+		</p>
+		
+	</div>
 </body>

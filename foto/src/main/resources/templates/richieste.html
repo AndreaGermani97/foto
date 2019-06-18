@@ -8,11 +8,28 @@
 </head>
 <body>
 	<div th:insert="header::header"></div>
+	<h4>Richieste inoltrate</h4>
 	<div>
 		<ul>
-			<li th:each="richiesta:${richieste}"><a
-				th:href="@{'/richieste'+'/'+${richiesta.id}}"
-				th:text="${richiesta.cliente.cognome}+' '+${richiesta.cliente.nome}+' '+${richiesta.data}"></a></li>
+			<li th:each="richiesta:${richieste}">
+				<p>
+					Email:<span th:text="${richiesta.cliente.email}">andreaGermani@gmail.com</span>
+				</p>
+				<p>
+					Indirizzo di consegna:<span
+						th:text="${richiesta.cliente.indirizzo}">via Torrevecchia,1024</span>
+				</p>
+				<p>
+					Data:<span th:text="${richiesta.data}">01/01/2020</span>
+				</p>
+				<p>
+					Numero di foto selezionate:<span
+						th:text="${richiesta.fotografie.size()}">5</span>
+				</p>
+				<p>
+					<a th:href="@{'/richiesta/'+${richiesta.id}}">Vedi richiesta</a>
+				</p>
+			</li>
 
 		</ul>
 	</div>

@@ -27,13 +27,13 @@
 	<p>Foto richieste:</p>
 		<div th:each="fotografia:${richiesta.fotografie}">
 			<p>
-				<img th:src="@{${fotografia.picLocation}}" width="300">
-			</p>
-			<p>
 				<span th:text="${fotografia.nome}">fotoNome</span>
 			</p>
 			<p>
 				<span th:text="${fotografia.descrizione}">fotoDescrizione</span>
+			</p>
+			<p>
+				<img th:src="@{${fotografia.picLocation}}" width="300">
 			</p>
 		</div>
 </body>
