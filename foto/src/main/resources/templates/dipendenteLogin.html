@@ -18,8 +18,8 @@
 				<td><input type="password" name="password"></td>
 			</tr>
 
-			<tr class="error" th:if="${param.error!=null}">
-				<td>Credenziali non valide</td>
+			<tr th:if="${param.error!=null}">
+				<td><span class="error">Credenziali non valide</span></td>
 			</tr>
 
 			<tr>
