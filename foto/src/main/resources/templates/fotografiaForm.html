@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.tyhmeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="ISO-8859-1">
+<title>Aggiungi album</title>
+<link th:href="@{/css/clientstyle.css}" rel="stylesheet" />
+</head>
+<body>
+<h4>Inserisci nuova foto</h4>
+	<form th:action="@{/fotografia}" method="post"
+		th:object="${fotografia}">
+		<table>
+			<tr>
+				<td>Nome:</td>
+				<td><input type="text" th:field="*{nome}" /></td>
+				<td th:if="${#fields.hasErrors('nome')}"><span
+					class="error" th:errors="*{nome}"></span></td>
+			</tr>
+			<tr>
+				<td>Descrizione:</td>
+				<td><input type="text" th:field="*{descrizione}" /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Salva" /></td>
+			</tr>
+		</table>
+      </form>
+
+</body>
+</html>

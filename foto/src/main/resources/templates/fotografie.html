@@ -11,6 +11,10 @@
 	
 	<h1 th:text="${album.nome}">Paesaggi</h1>
 	
+	<div th:if="${session.dipendenteCorrente!=null}">
+	   <a href="/aggiungiFotografia">Inserisci foto</a>
+	</div>
+	
 	<div th:each="fotografia:${album.fotografie}">
 		<p th:text="${fotografia.nome}">Mare</p>
 		
@@ -21,4 +25,5 @@
 		</p>
 		
 	</div>
+	
 </body>

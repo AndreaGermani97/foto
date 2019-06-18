@@ -48,16 +48,16 @@ public class DBPopulation implements ApplicationRunner{
 		Album albumDueFotografoPutin = new Album("album due Putin","album due di putin",putin);
 		putin.addAlbum(albumDueFotografoPutin);
 		
-		Fotografia putinAlbumUnoFotoUno = new Fotografia("foto uno album uno putin", "");
+		Fotografia putinAlbumUnoFotoUno = new Fotografia("foto uno album uno putin", "", albumUnoFotografoPutin);
 		putinAlbumUnoFotoUno.setPicLocation("/images/putinAlbumUnoFotoUno.jpg");
-		Fotografia putinAlbumUnoFotoDue = new Fotografia("foto due album uno putin", "");
+		Fotografia putinAlbumUnoFotoDue = new Fotografia("foto due album uno putin", "", albumUnoFotografoPutin);
 		putinAlbumUnoFotoDue.setPicLocation("/images/putinAlbumUnoFotoDue.jpg");
 		albumUnoFotografoPutin.addFotografia(putinAlbumUnoFotoUno);
 		albumUnoFotografoPutin.addFotografia(putinAlbumUnoFotoDue);
 		
-		Fotografia putinAlbumDueFotoUno = new Fotografia("foto uno album due putin", "");
+		Fotografia putinAlbumDueFotoUno = new Fotografia("foto uno album due putin", "", albumDueFotografoPutin);
 		putinAlbumDueFotoUno.setPicLocation("/images/putinAlbumDueFotoUno.jpg");
-		Fotografia putinAlbumDueFotoDue = new Fotografia("foto due album due putin", "");
+		Fotografia putinAlbumDueFotoDue = new Fotografia("foto due album due putin", "", albumDueFotografoPutin);
 		putinAlbumDueFotoDue.setPicLocation("/images/putinAlbumDueFotoDue.jpg");
 		albumDueFotografoPutin.addFotografia(putinAlbumDueFotoUno);
 		albumDueFotografoPutin.addFotografia(putinAlbumDueFotoDue);
@@ -69,16 +69,16 @@ public class DBPopulation implements ApplicationRunner{
 		Album albumDueFotografoTrump = new Album("album due trump", "album due di trump",trump);
 		trump.addAlbum(albumDueFotografoTrump);
 
-		Fotografia trumpAlbumUnoFotoUno = new Fotografia("foto uno album uno trump", "");
+		Fotografia trumpAlbumUnoFotoUno = new Fotografia("foto uno album uno trump", "", albumUnoFotografoTrump);
 		trumpAlbumUnoFotoUno.setPicLocation("/images/trumpAlbumUnoFotoUno.jpg");
-		Fotografia trumpAlbumUnoFotoDue = new Fotografia("foto due album uno trump", "");
+		Fotografia trumpAlbumUnoFotoDue = new Fotografia("foto due album uno trump", "", albumUnoFotografoTrump);
 		trumpAlbumUnoFotoDue.setPicLocation("/images/trumpAlbumUnoFotoDue.jpg");
 		albumUnoFotografoTrump.addFotografia(trumpAlbumUnoFotoUno);
 		albumUnoFotografoTrump.addFotografia(trumpAlbumUnoFotoDue);	
 		
-		Fotografia trumpAlbumDueFotoUno = new Fotografia("foto uno album due trump", "");
+		Fotografia trumpAlbumDueFotoUno = new Fotografia("foto uno album due trump", "", albumDueFotografoTrump);
 		trumpAlbumDueFotoUno.setPicLocation("/images/trumpAlbumDueFotoUno.jpg");
-		Fotografia trumpAlbumDueFotoDue = new Fotografia("foto due album due trump", "");
+		Fotografia trumpAlbumDueFotoDue = new Fotografia("foto due album due trump", "", albumDueFotografoTrump);
 		trumpAlbumDueFotoDue.setPicLocation("/images/trumpAlbumDueFotoDue.jpg");
 		albumDueFotografoTrump.addFotografia(trumpAlbumDueFotoUno);
 		albumDueFotografoTrump.addFotografia(trumpAlbumDueFotoDue);
