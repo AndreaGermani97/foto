@@ -6,12 +6,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
+import it.uniroma3.siw.foto.model.Album;
 import it.uniroma3.siw.foto.service.FotografiaService;
 
 @Controller
-@SessionAttributes("album")
 public class FotografiaController {
 
 	@Autowired
@@ -29,13 +29,13 @@ public class FotografiaController {
 
 	@RequestMapping(value = "/aggiungiFotografia/{id}")
 	public String aggiungiFotografiaAlCarrello(@PathVariable("id") Long id,
-			Model model) {
+			Model model,@SessionAttribute("album") Album album) {
 		if (this.carrello.contains(id)) {
 			carrello.remove(id);
 		} else {
 			this.carrello.add(this.fotografiaService.getFotografiaPerId(id));
 		}
-		return "fotografie.html";
+		return "redirect:/album/"+album.getId();
 	}
 
 }

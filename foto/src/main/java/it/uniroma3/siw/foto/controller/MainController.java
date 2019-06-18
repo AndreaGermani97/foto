@@ -52,8 +52,7 @@ public class MainController {
 		Dipendente dipendenteCorrente = this.dipendenteService.getDipendentePerEmail(email);
         session.setAttribute("dipendenteCorrente", dipendenteCorrente);
         
-        model.addAttribute("fotografi", this.fotografoService.tutti());
-		return "fotografi";
+		return "redirect:/";
 	}
 	
 	
