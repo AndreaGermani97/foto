@@ -49,7 +49,7 @@ public class FotografiaController {
 	}
 	
 	@RequestMapping(value = "/fotografia", method = RequestMethod.POST)
-	public String newAlbum(@Valid @ModelAttribute("fotografia") Fotografia fotografia,Model model, BindingResult bindingResult) {
+	public String newFotografia(@Valid @ModelAttribute("fotografia") Fotografia fotografia,Model model, BindingResult bindingResult) {
 		this.fotografiaValidator.validate(fotografia, bindingResult);
 		if (!bindingResult.hasErrors()) {
 			this.fotografiaService.inserisci(fotografia);
