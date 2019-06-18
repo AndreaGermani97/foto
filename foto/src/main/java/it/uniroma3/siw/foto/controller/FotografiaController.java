@@ -53,8 +53,7 @@ public class FotografiaController {
 		this.fotografiaValidator.validate(fotografia, bindingResult);
 		if (!bindingResult.hasErrors()) {
 			this.fotografiaService.inserisci(fotografia);
-			model.addAttribute("album", fotografia.getAlbum());
-			return "fotografie.html";
+			return "redirect:album/"+fotografia.getAlbum().getId();
 		} else {
 			return "fotografiaForm.html";
 		}

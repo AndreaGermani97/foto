@@ -38,8 +38,7 @@ public class AlbumController {
 		this.albumValidator.validate(album, bindingResult);
 		if (!bindingResult.hasErrors()) {
 			this.albumService.inserisci(album);
-			model.addAttribute("fotografo", album.getFotografo());
-			return "album";
+			return "redirect:fotografo/"+album.getFotografo().getId();
 		} else {
 			return "albumForm";
 		}
