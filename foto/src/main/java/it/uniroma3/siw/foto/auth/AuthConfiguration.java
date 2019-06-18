@@ -24,7 +24,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 
 	private DataSource dataSource;
 
-	private final static String[] PAGINE_DIPENDENTE = { "/richieste", "/newFotografo", "/newAlbum", "/newFotografia" };
+	private final static String[] PAGINE_DIPENDENTE = { "/richieste","/richiesta/**","/aggiungiFotografo", "/aggiungiAlbum", "/aggiungiFotografia" };
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
