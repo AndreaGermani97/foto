@@ -25,7 +25,13 @@ public class FotografiaService {
 	public void inserisci(@Valid Fotografia fotografia) {
 		fotografia.getAlbum().addFotografia(fotografia);
 		this.fotografiaRepository.save(fotografia);
-		
+		this.salvaNelloStorage(fotografia);
+	}
+
+	private void salvaNelloStorage(Fotografia fotografia) {
+		// TODO
+		String picLocation = "/images/fotoProva.jpg"; // foto di prova
+		fotografia.setPicLocation(picLocation);
 	}
 
 	@Transactional
