@@ -45,9 +45,19 @@
 			</tr>
 		</table>
       </form>
+      
       Foto selezionate:
        <div th:each="fotografia:${richiesta.fotografie}">
-	      <img th:src="@{${fotografia.picLocation}}" width="300">
+          <table>
+          <tr>
+	      <td><img th:src="@{${fotografia.picLocation}}" width="300"><td>
+	      <td> 
+	          <a th:href="@{'/rimuoviDalCarrello/'+${fotografia.id}}">
+	          <button>Rimuovi foto dal carrello</button>
+	          </a>
+	       </td>
+	      </tr>
+	      </table>
 	    </div>
 </body>
 </html>

@@ -82,5 +82,11 @@ public class RichiestaController {
 		model.addAttribute("richiesta", richiesta);
 		return "richiestaForm.html";
 	}
+	
+	@RequestMapping("/rimuoviDalCarrello/{id}")
+	public String rimuoviFotoDalCarrello(@PathVariable("id")Long id) {
+		this.carrello.remove(id);
+		return "redirect:/inviaRichiesta";
+	}
 
 }
