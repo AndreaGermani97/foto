@@ -9,6 +9,19 @@
 <body>
 	<div th:insert="header::header"></div>
 	
+	<p>
+        <a href="/">Home</a>
+        > 
+        <a th:href="@{'/fotografo/'+${album.fotografo.id}}">
+          <span th:text="${album.fotografo.nome}">Mario</span>
+          <span th:text="${album.fotografo.cognome}">Rossi</span>
+        </a>
+        >
+        <a th:href="@{'/album' + '/' + ${album.id}} " th:text="${album.nome}">
+        Paesaggi
+        </a>
+    </p>
+	
 	<h1 th:text="${album.nome}">Paesaggi</h1>
 	
 	<div th:if="${session.dipendenteCorrente!=null}">

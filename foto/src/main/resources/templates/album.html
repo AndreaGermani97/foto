@@ -8,6 +8,16 @@
 </head>
 <body>
     <div th:insert="header::header"></div>
+    
+    <p>
+        <a href="/">Home</a>
+        >
+        <a th:href="@{'/fotografo/'+${fotografo.id}}">
+          <span th:text="${fotografo.nome}">Mario</span>
+          <span th:text="${fotografo.cognome}">Rossi</span>
+        </a>
+    </p>
+    
 	<h1>Album di
 	  <span th:text="${fotografo.nome}">Mario</span>
 	  <span th:text="${fotografo.cognome}">Rossi</span>

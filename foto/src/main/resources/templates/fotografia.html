@@ -9,6 +9,23 @@
 <body>
 	<div th:insert="header::header"></div>
 	
+	<p>
+        <a href="/">Home</a>
+        > 
+        <a th:href="@{'/fotografo/'+${fotografia.album.fotografo.id}}">
+          <span th:text="${fotografia.album.fotografo.nome}">Mario</span>
+          <span th:text="${fotografia.album.fotografo.cognome}">Rossi</span>
+        </a>
+        >
+        <a th:href="@{'/album' + '/' + ${fotografia.album.id}} " th:text="${fotografia.album.nome}">
+        Paesaggi
+        </a>
+        >
+        <a th:href="@{'/fotografia' + '/' + ${fotografia.id}} " th:text="${fotografia.nome}">
+        Mare
+        </a>   
+    </p>
+	
 	<h2 th:text="${fotografia.nome}">Mare</h2>
 	<p th:text="${ fotografia.descrizione }">bla bla bla</p>
 
