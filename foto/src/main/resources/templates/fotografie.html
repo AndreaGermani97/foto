@@ -16,14 +16,33 @@
 	</div>
 	
 	<div th:each="fotografia:${album.fotografie}">
-		<p th:text="${fotografia.nome}">Mare</p>
+	<table>
+	 <tr>
+	    
+	   <td>
+	      <a th:href="@{'/fotografia' + '/' + ${fotografia.id}} "> <img
+				th:src="@{${fotografia.picLocation}}" width="400" />
+		   </a>
+	   </td>
+	   
+	   <td> 
+		<h3 th:text="${fotografia.nome}">Mare</h3>
+		<div th:text="${ fotografia.descrizione }">Bla bla bla</div> 
 		
-		<p>
-			<a th:href="@{'/fotografia' + '/' + ${fotografia.id}} "> <img
-				th:src="@{${fotografia.picLocation}}" width="500" />
-			</a>
-		</p>
-		
-	</div>
+		<div th:if="${ session.dipendenteCorrente==null }">
+		  <a th:if="${carrello.contains(fotografia.id)}" th:href="@{'/rimuoviFotografia/' + ${fotografia.id}}">
+		    <Button  type="submit" >Rimuovi foto dal carrello</Button>
+	      </a>
+	
+	      <a th:unless="${carrello.contains(fotografia.id)}" th:href="@{'/aggiungiFotografia/' + ${fotografia.id}}">
+	        <Button type="submit">Aggiungi foto al tuo carrello</Button>
+	      </a>
+	     </div>
+
+	   </td>
+	   
+	  </tr>
+	</table>
+   </div>
 	
 </body>

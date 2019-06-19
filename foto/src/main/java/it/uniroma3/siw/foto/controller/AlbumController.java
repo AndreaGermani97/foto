@@ -26,10 +26,14 @@ public class AlbumController {
 
 	@Autowired
 	private AlbumValidator albumValidator;
+	
+	@Autowired
+	private Carrello carrello;
 
 	@RequestMapping(value = "/album/{id}", method = RequestMethod.GET)
 	public String getAlbum(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("album", albumService.getAlbumPerId(id));
+		model.addAttribute("carrello", this.carrello);
 		return "fotografie.html";
 	}
 

@@ -33,18 +33,20 @@ public class FotografiaController {
 	@RequestMapping(value = "/fotografia/{id}", method = RequestMethod.GET)
 	public String getFotografia(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("fotografia", fotografiaService.getFotografiaPerId(id));
-		model.addAttribute("carrello", this.carrello);
 		return "fotografia.html";
 	}
 
 	@RequestMapping(value = "/aggiungiFotografia/{id}")
 	public String aggiungiFotografiaAlCarrello(@PathVariable("id") Long id,
 			Model model,@SessionAttribute("album") Album album) {
-		if (this.carrello.contains(id)) {
-			carrello.remove(id);
-		} else {
-			this.carrello.add(this.fotografiaService.getFotografiaPerId(id));
-		}
+		this.carrello.add(this.fotografiaService.getFotografiaPerId(id));
+		return "redirect:/album/"+album.getId();
+	}
+	
+	@RequestMapping(value = "/rimuoviFotografia/{id}")
+	public String rimuoviFotografiaDalCarrello(@PathVariable("id") Long id,
+			Model model,@SessionAttribute("album") Album album) {
+		this.carrello.remove(id);
 		return "redirect:/album/"+album.getId();
 	}
 	
