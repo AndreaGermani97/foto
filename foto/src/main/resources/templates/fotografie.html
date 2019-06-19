@@ -40,7 +40,7 @@
 	   
 	   <td> 
 		<h3 th:text="${fotografia.nome}">Mare</h3>
-		<div th:text="${ fotografia.descrizione }">Bla bla bla</div> 
+		<p th:text="${ fotografia.descrizione }">Bla bla bla</p> 
 		
 		<div th:if="${ session.dipendenteCorrente==null }">
 		  <a th:if="${carrello.contains(fotografia.id)}" th:href="@{'/rimuoviFotografia/' + ${fotografia.id}}">
