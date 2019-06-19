@@ -9,18 +9,24 @@
 <div th:fragment="header">
 
 <div th:if="${session.dipendenteCorrente==null}">
-<span class="richiestaRef"><a href="/inviaRichiesta">Invia richiesta</a></span>
-<span class="dipendenteRef"><a href="/login">Accedi</a></span>
+<h3><a href="/inviaRichiesta">Invia richiesta</a></h3>
+<h3 class="dipendenteRef"><a href="/login">Accedi</a></h3>
 </div>
 
 <div th:if="${session.dipendenteCorrente!=null}">
-<p>Dipendente: 
-<span th:text="${session.dipendenteCorrente.nome}">Andrea</span>
-<span th:text="${session.dipendenteCorrente.cognome}">Germani</span>
-</p>
 
-<span class="richiestaRef"><a href="/richieste">Trova Richieste</a></span>
-<span class="dipendenteRef"><a href="/logout">Esci</a></span>
+<table>
+   <tr>
+  <td ><img src="/images/dipendenteIcona.jpg" width="40"></td>
+  <td><b><span th:text="${session.dipendenteCorrente.nome}">Andrea</span>
+      <span th:text="${session.dipendenteCorrente.cognome}">Germani</span></b></td>    
+  </tr>
+  <tr><td><a href="/logout">Esci</a></td>
+       <td><a href="/richieste">Vedi richieste</a></td>
+  </tr>
+</table>
+
+
 </div>
 
 </div>
