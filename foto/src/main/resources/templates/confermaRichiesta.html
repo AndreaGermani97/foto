@@ -4,25 +4,26 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Conferma richiesta</title>
+<link th:href="@{/css/clientstyle.css}" rel="stylesheet" />
 </head>
 <body>
-	Riepilogo Richiesta:
+	<h2>Riepilogo Richiesta</h2>
 	<p>
-		Nome: <span th:text="${richiesta.cliente.nome}"> Paolo </span>
+		<strong>Nome: </strong><span th:text="${richiesta.cliente.nome}"> Paolo </span>
 	</p>
 	<p>
-		Cognome : <span th:text="${richiesta.cliente.cognome}"> Rossi </span>
+		<strong>Cognome : </strong><span th:text="${richiesta.cliente.cognome}"> Rossi </span>
 	</p>
 	<p>
-		Email: <span th:text="${richiesta.cliente.email}"> abc@email.it
+		<strong>Email: </strong><span th:text="${richiesta.cliente.email}"> abc@email.it
 		</span>
 	</p>
 	<p>
-		Indirizzo di consegna: <span th:text="${richiesta.cliente.indirizzo}">
+		<strong>Indirizzo di consegna: </strong><span th:text="${richiesta.cliente.indirizzo}">
 			via Cristoforo Colombo, 1</span>
 	</p>
 
-	Foto selezionate:
+	<h3>Foto selezionate:</h3>
 			<div th:each="fotografia:${richiesta.fotografie}">
 				<img th:src="@{${fotografia.picLocation}}" width="300">
 			</div>

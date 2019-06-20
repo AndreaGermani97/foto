@@ -4,27 +4,29 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Richiesta</title>
+<link th:href="@{/css/clientstyle.css}" rel="stylesheet" />
 </head>
 <body>
-	<h2>Dati richiesta:</h2>
+    <div th:insert="header::header"></div>
+	<h2>Dati richiesta</h2>
 	<p>
-		Data: <span th:text="${ richiesta.data }"> 01/01/2000</span>
+		<strong>Data: </strong><span th:text="${ richiesta.data }"> 01/01/2000</span>
 	</p>
 	<p>
-		Nome: <span th:text="${richiesta.cliente.nome }">Paolo</span>
+		<strong>Nome: </strong><span th:text="${richiesta.cliente.nome }">Paolo</span>
 	</p>
 	<p>
-		Cognome: <span th:text="${richiesta.cliente.cognome}">Rossi</span>
+		<strong>Cognome: </strong><span th:text="${richiesta.cliente.cognome}">Rossi</span>
 	</p>
 	<p>
-		Email: <span th:text="${ richiesta.cliente.email }">abc@email.it</span>
+		<strong>Email: </strong><span th:text="${ richiesta.cliente.email }">abc@email.it</span>
 	</p>
 	<p>
-		Indirizzo di consegna: <span
+		<strong>Indirizzo di consegna: </strong><span
 			th:text="${ richiesta.cliente.indirizzo }">via Cristoforo
 			Colombo, 1</span>
 	</p>
-	<p>Foto richieste:</p>
+	<h3>Foto richieste:</h3>
 		<div th:each="fotografia:${richiesta.fotografie}">
 			<p>
 				<span th:text="${fotografia.nome}">fotoNome</span>
