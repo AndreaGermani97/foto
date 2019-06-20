@@ -19,12 +19,15 @@
 				<td><input type="password" name="password"></td>
 			</tr>
 
-			<tr th:if="${param.error!=null}">
-				<td><span class="error">Credenziali non valide</span></td>
-			</tr>
+
 
 			<tr>
 				<td><button class="button button1" type="submit">Accedi</button></td>
+			</tr>
+		</table>
+		<table>
+			<tr th:if="${param.error!=null}">
+				<td><span class="error">Credenziali non valide</span></td>
 			</tr>
 		</table>
 	</form>
