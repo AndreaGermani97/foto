@@ -37,7 +37,7 @@
 					class="error" th:errors="*{cliente.indirizzo}"></span></td>
 			</tr>
 			<tr>
-				<td><input type="submit" value="Invia richiesta" /></td>
+				<td><input class="button button1" type="submit" value="Invia richiesta" /></td>
 				<td th:if="${#fields.hasErrors('fotografie')}"><span
 					class="error" th:errors="*{fotografie}"></span></td>
 			</tr>
@@ -45,7 +45,7 @@
       </form>
       <table>
 			<tr>
-				<td><a href="/"><button>Torna indietro</button></a></td>
+				<td><a href="/"><button class="button button1">Torna indietro</button></a></td>
 			</tr>
       </table>
       
@@ -56,7 +56,7 @@
 	      <td><img th:src="@{${fotografia.picLocation}}" width="300"><td>
 	      <td> 
 	          <a th:href="@{'/rimuoviDalCarrello/'+${fotografia.id}}">
-	          <button>Rimuovi foto dal carrello</button>
+	          <button class="button button2">Rimuovi foto dal carrello</button>
 	          </a>
 	       </td>
 	      </tr>

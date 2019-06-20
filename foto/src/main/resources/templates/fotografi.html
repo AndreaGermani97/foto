@@ -11,15 +11,15 @@
 	<h1>Elenco fotografi</h1>
 	
 	<div th:if="${session.dipendenteCorrente!=null}">
-       <span><a href="/aggiungiFotografo">Inserisci fotografo</a></span>
+       <span><a href="/aggiungiFotografo"><button class="button button1">Inserisci fotografo</button></a></span>
     </div>
     
 	<ul>
 		<li th:each="fotografo:${fotografi}">
-			<p>Nome: <span th:text="${fotografo.nome}">Donald</span></p>
-			<p>Cognome: <span th:text="${fotografo.cognome}">Trump</span></p>
+			<p>Nome: <strong><span th:text="${fotografo.nome}">Donald</span></strong></p>
+			<p>Cognome: <strong><span th:text="${fotografo.cognome}">Trump</span></strong></p>
 			<p>
-				<a th:href="@{'/fotografo' + '/' + ${fotografo.id}} ">Vedi Album</a>
+				<a th:href="@{'/fotografo' + '/' + ${fotografo.id}} "><button class="button button1">Vedi Album</button></a>
 			</p>
 		</li>
 	</ul>

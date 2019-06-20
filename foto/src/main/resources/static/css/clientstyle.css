@@ -1,12 +1,43 @@
 @charset "ISO-8859-1";
 
-
-h3.dipendenteRef{
-	position:absolute;
-	left:90%;
-	top:0;
+h3.dipendenteRef {
+	position: absolute;
+	left: 90%;
+	top: 0;
 }
 
-span.error{
-	color:red;
+span.error {
+	color: red;
+}
+
+.button {
+	background-color: white;
+	border: 2px solid black;
+	border-radius: 8px;
+	color: black;
+	padding: 10px 24px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 10px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+
+.button1 {
+	border: 2px solid #0080ff;
+}
+
+.button1:hover {
+	background-color: #0080ff;
+	color: white;
+}
+
+.button2 {
+	border: 2px solid #ff0000;
+}
+
+.button2:hover {
+	background-color: #ff0000;
+	color: white;
 }

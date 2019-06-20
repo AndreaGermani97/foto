@@ -24,7 +24,7 @@
 	</h1>
 	
 	<div th:if="${session.dipendenteCorrente!=null}">
-	   <span><a href="/aggiungiAlbum">Inserisci album</a></span>
+	  	<span><a href="/aggiungiAlbum"><button class="button button1">Inserisci album</button></a></span>
 	</div>
 	
 	<ul>
@@ -36,7 +36,7 @@
 			<p>
 				<span th:text="${album.descrizione}">bla bla bla</span>
 			</p>
-			<p><a th:href="@{'/album' + '/' + ${album.id}} ">Vedi Fotografie</a></p>
+			<p><a th:href="@{'/album' + '/' + ${album.id}} "><button class="button button1">Vedi Fotografie</button></a></p>
 		</li>
 	</ul>
 
