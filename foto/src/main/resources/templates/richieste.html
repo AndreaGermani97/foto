@@ -13,21 +13,21 @@
 		<ul>
 			<li th:each="richiesta:${richieste}">
 				<p>
-					Email:<span th:text="${richiesta.cliente.email}">andreaGermani@gmail.com</span>
+					<strong>Email:</strong><span th:text="${richiesta.cliente.email}">andreaGermani@gmail.com</span>
 				</p>
 				<p>
-					Indirizzo di consegna:<span
+					<strong>Indirizzo di consegna:</strong><span
 						th:text="${richiesta.cliente.indirizzo}">via Torrevecchia,1024</span>
 				</p>
 				<p>
-					Data:<span th:text="${richiesta.data}">01/01/2020</span>
+					<strong>Data:</strong><span th:text="${richiesta.data}">01/01/2020</span>
 				</p>
 				<p>
-					Numero di foto selezionate:<span
+					<strong>Numero di foto selezionate:</strong><span
 						th:text="${richiesta.fotografie.size()}">5</span>
 				</p>
 				<p>
-					<a th:href="@{'/richiesta/'+${richiesta.id}}">Vedi richiesta</a>
+					<a th:href="@{'/richiesta/'+${richiesta.id}}"><button>Vedi richiesta</button></a>
 				</p>
 			</li>
 
