@@ -9,8 +9,9 @@
 <div th:fragment="header">
 
 <div th:if="${session.dipendenteCorrente==null}">
-<h3><a href="/inviaRichiesta"><button class="button button1">Invia richiesta</button></a></h3>
-<h3 class="dipendenteRef"><a href="/login"><button class="button button1">Accedi</button></a></h3>
+<table><tr><td><h3><a href="/inviaRichiesta"><button class="button button1">Invia richiesta</button></a></h3></td>
+<td><h3 class="dipendenteRef"><a href="/login"><button class="button button1">Accedi</button></a></h3></td>
+</tr></table>
 </div>
 
 <div th:if="${session.dipendenteCorrente!=null}">
