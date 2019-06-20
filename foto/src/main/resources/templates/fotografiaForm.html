@@ -22,10 +22,16 @@
 				<td><input type="text" th:field="*{descrizione}" /></td>
 			</tr>
 			<tr>
-				<td><input class="button button1" type="submit" value="Salva" /></td>
+				<td><input class="button buttonForm" type="submit" value="Salva" /></td>
 			</tr>
 		</table>
       </form>
+      	<table>
+		<tr>
+			<td><a th:href="@{'album'+'/'+${fotografia.album.id}}"><button
+						class="button button1">Torna indietro</button></a></td>
+		</tr>
+	</table>
 
 </body>
 </html>

@@ -41,3 +41,12 @@ span.error {
 	background-color: #ff0000;
 	color: white;
 }
+
+.buttonForm {
+	border: 2px solid #008000;
+}
+
+.buttonForm:hover {
+	background-color: #008000;
+	color: white;
+}

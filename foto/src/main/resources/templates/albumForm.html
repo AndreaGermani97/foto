@@ -7,25 +7,30 @@
 <link th:href="@{/css/clientstyle.css}" rel="stylesheet" />
 </head>
 <body>
-<h4>Inserisci i dati del nuovo album</h4>
-	<form th:action="@{/album}" method="post"
-		th:object="${album}">
+	<h4>Inserisci i dati del nuovo album</h4>
+	<form th:action="@{/album}" method="post" th:object="${album}">
 		<table>
 			<tr>
 				<td>Nome:</td>
 				<td><input type="text" th:field="*{nome}" /></td>
-				<td th:if="${#fields.hasErrors('nome')}"><span
-					class="error" th:errors="*{nome}"></span></td>
+				<td th:if="${#fields.hasErrors('nome')}"><span class="error"
+					th:errors="*{nome}"></span></td>
 			</tr>
 			<tr>
 				<td>Descrizione:</td>
 				<td><input type="text" th:field="*{descrizione}" /></td>
 			</tr>
 			<tr>
-				<td><input class="button button1" type="submit" value="Salva" /></td>
+				<td><input class="button buttonForm" type="submit" value="Salva" /></td>
 			</tr>
 		</table>
-      </form>
+	</form>
+	<table>
+		<tr>
+			<td><a th:href="@{'/fotografo'+'/'+${album.fotografo.id}}"><button
+						class="button button1">Torna indietro</button></a></td>
+		</tr>
+	</table>
 
 </body>
 </html>
