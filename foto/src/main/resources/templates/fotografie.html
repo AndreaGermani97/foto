@@ -24,9 +24,9 @@
 	
 	<h1 th:text="${album.nome}">Paesaggi</h1>
 	
-	<div th:if="${session.dipendenteCorrente!=null}">
+	<p th:if="${session.dipendenteCorrente!=null}">
 	   <a href="/aggiungiFotografia"><button class="button button1">Inserisci foto</button></a>
-	</div>
+	</p>
 	
 	<div th:each="fotografia:${album.fotografie}">
 	<table>
